@@ -1,20 +1,22 @@
 Lab \#1
 ================
 
-### in class Thursday Sept 2, 2021
+### in class Thursday Sept 1, 2022
 
 ### Econ B2000, MA Econometrics
 
 ### Kevin R Foster, CCNY
 
-![](lab1.jpg)
+<img src="lab1.jpg" style="width:25.0%" />
 
 Overall Goal: you will be assessing the fairness of the dice of the
 people in your group. Each student had a chance to “adjust” the dice, to
-see if they roll a 6 more or less often than would be expected. But how
-would we really know - what is “more often”? Obviously some dice will
-look grossly misshapen but for now we’ll concentrate on just the
-results: did a 6 come up, or not?
+see if they roll a 6 more or less often than would be expected. *(Or
+roll some other number than 6 preferentially – some of you have
+different dice. In this I’ll say “6” but you can substitute your own
+chosen number.)* But how would we really know - what is “more often”?
+Obviously some dice will look grossly misshapen but for now we’ll
+concentrate on just the results: did a 6 come up, or not?
 
 You’ll work together for 45 minutes then one person from each group will
 give a short presentation about results to the whole class. Group will
@@ -39,10 +41,11 @@ Analyze PP2 including the question: if the dice were fair, what is the
 chance it could be judged as unfair?
 
 **PP3**: roll 100 times and specify decision rules. Some cases are easy:
-if every roll comes to 6 then might quickly conclude. But what about the
-edge cases? Is it fair to say that every conclusion has some level of
-confidence attached? Where do you set boundaries for decisions? Analyze
-PP3. What is the chance that fair dice could be judged to be unfair?
+if every single roll comes to 6 then might quickly conclude. But what
+about the edge cases? Is it fair to say that every conclusion has some
+level of confidence attached? Where do you set boundaries for decisions?
+Analyze PP3. What is the chance that fair dice could be judged to be
+unfair?
 
 Now devise your own **experiment protocol** (not ‘possible’ anymore but
 actual so call it **EP1**). Analyze it before looking at the data. What
@@ -73,7 +76,7 @@ are free to set out run EPn, for higher values of n.
 ### Some background on simulations with R
 
 You can have the computer roll dice. The command, sample(), will do it
-nicely. This command this takes 20 draws from the integers 1 to 6. The
+nicely. This command below takes 20 draws from the integers 1 to 6. The
 metaphor is not quite rolling dice, but as if there were 6 balls in a
 jar, labeled with a number, and it picks a ball from the jar 20 times.
 So that is why the replace=TRUE command is important, otherwise after it
@@ -85,8 +88,8 @@ how_many_rolls <- 20
 sim_rolls <- sample(1:6, how_many_rolls, replace = TRUE)
 ```
 
-Note that I’ve made a variable, how\_many\_rolls, so that it’s easy to
-go back and change that once and have that change propagate through the
+Note that I’ve made a variable, how_many_rolls, so that it’s easy to go
+back and change that once and have that change propagate through the
 rest of the program. It’s a useful habit to get into.
 
 That gives one version of EP2, so that is one example of possible
@@ -133,7 +136,7 @@ if_come_up_6 <- as.numeric(lots_of_sim_rolls == 6)
 mean(if_come_up_6)
 ```
 
-    ## [1] 0.172
+    ## [1] 0.188
 
 ``` r
 if_come_up_6_vec <- as.numeric(sim_rolls_vec == 6)
@@ -157,11 +160,10 @@ is the average value.)
 Also note that, for complicated historical reasons, we don’t want to use
 just “=” but rather “==”. If you were to write just a single equals
 sign, that would tell it to assign the value of 6 to every component of
-lots\_of\_sim\_rolls. But a double equals sign gives True/False
-depending on whether the equality is true or not. For this case, you
-could get the same result with (lots\_of\_sim\_rolls \> 5) or
-(lots\_of\_sim\_rolls \>= 6) or even \!(lots\_of\_sim\_rolls \< 6)
-because \! signifies logical NOT.
+lots_of_sim_rolls. But a double equals sign gives True/False depending
+on whether the equality is true or not. For this case, you could get the
+same result with (lots_of_sim_rolls \> 5) or (lots_of_sim_rolls \>= 6)
+or even !(lots_of_sim_rolls \< 6) because ! signifies logical NOT.
 
 Note that for this case it doesn’t matter whether I take the average of
 each simulation and then the average of those averages, versus taking
@@ -172,7 +174,7 @@ together since the columns are each the same length.
 
 Note that the average values of these 2 versions, matrix or vector, are
 going to be different, just due to the inherent randomness. As you
-increase how\_many\_sims, they should get closer – that’s Law of Large
+increase how_many_sims, they should get closer – that’s Law of Large
 Numbers. You can experiment to see.
 
 Note that I’ve split the code into first creating simulated values from

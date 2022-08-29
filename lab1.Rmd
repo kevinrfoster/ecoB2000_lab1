@@ -2,12 +2,12 @@
 title: 'Lab #1'
 output: github_document
 ---
-### in class Thursday Sept 2, 2021 
+### in class Thursday Sept 1, 2022 
 ### Econ B2000, MA Econometrics
 ### Kevin R Foster, CCNY
 ![](lab1.jpg){width=25%}
 
-Overall Goal: you will be assessing the fairness of the dice of the people in your group. Each student had a chance to "adjust" the dice, to see if they roll a 6 more or less often than would be expected.  But how would we really know - what is "more often"? Obviously some dice will look grossly misshapen but for now we'll concentrate on just the results: did a 6 come up, or not?
+Overall Goal: you will be assessing the fairness of the dice of the people in your group. Each student had a chance to "adjust" the dice, to see if they roll a 6 more or less often than would be expected. *(Or roll some other number than 6 preferentially -- some of you have different dice. In this I'll say "6" but you can substitute your own chosen number.)*  But how would we really know - what is "more often"? Obviously some dice will look grossly misshapen but for now we'll concentrate on just the results: did a 6 come up, or not?
 
 You'll work together for 45 minutes then one person from each group will give a short presentation about results to the whole class. Group will write up more details as Homework 2.
 
@@ -18,7 +18,7 @@ Create some Experiment Protocols **before** looking at the data from the dice ro
 
 **PP2**: roll the dice 20 times. (Each person should have done this beforehand.) Group can specify a decision rule to judge that dice is fair or unfair. Consider the stats question: if fair dice are rolled 20 times, what is likely number of 6 resulting? How unusual is it, to get 1 more or less than that? How unusual is it, to get 2 more or less? 3? Analyze PP2 including the question: if the dice were fair, what is the chance it could be judged as unfair?
 
-**PP3**: roll 100 times and specify decision rules. Some cases are easy: if every roll comes to 6 then might quickly conclude. But what about the edge cases? Is it fair to say that every conclusion has some level of confidence attached? Where do you set boundaries for decisions? Analyze PP3. What is the chance that fair dice could be judged to be unfair?
+**PP3**: roll 100 times and specify decision rules. Some cases are easy: if every single roll comes to 6 then might quickly conclude. But what about the edge cases? Is it fair to say that every conclusion has some level of confidence attached? Where do you set boundaries for decisions? Analyze PP3. What is the chance that fair dice could be judged to be unfair?
 
 Now devise your own **experiment protocol** (not 'possible' anymore but actual so call it **EP1**). Analyze it before looking at the data. What is a reasonable number of times to roll your experiment dice? (given time available in class, whether group members did the homework and brought info on 20 rolls, etc) If you roll the experiment dice a certain number of times and see a particular outcome, then you would conclude it is fair or not. How confident would you be, in any of those conclusions? Note that while previous Possible Protocols emphasized counting just the number of times a 6 came up, you might consider other outcomes such as the average value of the dice when rolled or the distribution of other outcomes (what number is on opposite face from 6? Do you suppose that number might be disproportionately represented if dice were not fair?).
 
@@ -29,7 +29,7 @@ Your group's short presentation should explain justification for your EP1, your 
 For homework, should explain your choices of PP3 and analysis. Then you are free to set out run EPn, for higher values of n.
 
 ### Some background on simulations with R
-You can have the computer roll dice. The command, sample(), will do it nicely. This command this takes 20 draws from the integers 1 to 6. The metaphor is not quite rolling dice, but as if there were 6 balls in a jar, labeled with a number, and it picks a ball from the jar 20 times. So that is why the replace=TRUE command is important, otherwise after it takes out a ball it doesn't put it back so couldn't run that more than 6 times.
+You can have the computer roll dice. The command, sample(), will do it nicely. This command below takes 20 draws from the integers 1 to 6. The metaphor is not quite rolling dice, but as if there were 6 balls in a jar, labeled with a number, and it picks a ball from the jar 20 times. So that is why the replace=TRUE command is important, otherwise after it takes out a ball it doesn't put it back so couldn't run that more than 6 times.
 ```{r}
 how_many_rolls <- 20
 sim_rolls <- sample(1:6, how_many_rolls, replace = TRUE)
