@@ -2,7 +2,7 @@
 title: 'Lab #1'
 output: github_document
 ---
-### in class Thursday Sept 1, 2022 
+### in class Thursday Sept 7, 2023 
 ### Econ B2000, MA Econometrics
 ### Kevin R Foster, CCNY
 ![](lab1.jpg){width=25%}

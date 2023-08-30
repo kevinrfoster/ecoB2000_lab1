@@ -1,7 +1,7 @@
 Lab \#1
 ================
 
-### in class Thursday Sept 1, 2022
+### in class Thursday Sept 7, 2023
 
 ### Econ B2000, MA Econometrics
 
@@ -136,14 +136,14 @@ if_come_up_6 <- as.numeric(lots_of_sim_rolls == 6)
 mean(if_come_up_6)
 ```
 
-    ## [1] 0.188
+    ## [1] 0.172
 
 ``` r
 if_come_up_6_vec <- as.numeric(sim_rolls_vec == 6)
 mean(if_come_up_6_vec)
 ```
 
-    ## [1] 0.153
+    ## [1] 0.156
 
 A few notes. You could write
 
