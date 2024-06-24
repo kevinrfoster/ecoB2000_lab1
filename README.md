@@ -6,7 +6,7 @@ Lab \#1
 ### Econ B2000, MA Econometrics
 
 ### Kevin R Foster, CCNY
-<img src="lab1.jpg" style="width:25.0%" />
+<img src="lab1.jpg" style="width:15.0%" />
 
 Overall Goal: you will be assessing the fairness of the dice of the
 people in your group. Each student had a chance to “adjust” the dice, to
