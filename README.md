@@ -1,12 +1,11 @@
 Lab \#1
 ================
 
-### in class Thursday Sept 7, 2023
+### in class Thursday Sept 5, 2024
 
 ### Econ B2000, MA Econometrics
 
 ### Kevin R Foster, CCNY
-
 <img src="lab1.jpg" style="width:25.0%" />
 
 Overall Goal: you will be assessing the fairness of the dice of the
@@ -17,10 +16,6 @@ different dice. In this I’ll say “6” but you can substitute your own
 chosen number.)* But how would we really know - what is “more often”?
 Obviously some dice will look grossly misshapen but for now we’ll
 concentrate on just the results: did a 6 come up, or not?
-
-You’ll work together for 45 minutes then one person from each group will
-give a short presentation about results to the whole class. Group will
-write up more details as Homework 2.
 
 Create some Experiment Protocols **before** looking at the data from the
 dice rolls. Plan how to test and state what conclusions would be drawn,
@@ -75,21 +70,21 @@ are free to set out run EPn, for higher values of n.
 
 ### Some background on simulations with R
 
-You can have the computer roll dice. The command, sample(), will do it
+You can have the computer roll dice. The command, `sample()`, will do it
 nicely. This command below takes 20 draws from the integers 1 to 6. The
 metaphor is not quite rolling dice, but as if there were 6 balls in a
 jar, labeled with a number, and it picks a ball from the jar 20 times.
-So that is why the replace=TRUE command is important, otherwise after it
-takes out a ball it doesn’t put it back so couldn’t run that more than 6
-times.
+So that is why the `replace=TRUE` command is important, otherwise after
+it takes out a ball it doesn’t put it back so couldn’t run that more
+than 6 times.
 
 ``` r
 how_many_rolls <- 20
 sim_rolls <- sample(1:6, how_many_rolls, replace = TRUE)
 ```
 
-Note that I’ve made a variable, how_many_rolls, so that it’s easy to go
-back and change that once and have that change propagate through the
+Note that I’ve made a variable, `how_many_rolls`, so that it’s easy to
+go back and change that once and have that change propagate through the
 rest of the program. It’s a useful habit to get into.
 
 That gives one version of EP2, so that is one example of possible
@@ -136,14 +131,14 @@ if_come_up_6 <- as.numeric(lots_of_sim_rolls == 6)
 mean(if_come_up_6)
 ```
 
-    ## [1] 0.172
+    ## [1] 0.186
 
 ``` r
 if_come_up_6_vec <- as.numeric(sim_rolls_vec == 6)
 mean(if_come_up_6_vec)
 ```
 
-    ## [1] 0.156
+    ## [1] 0.171
 
 A few notes. You could write
 
@@ -151,7 +146,7 @@ A few notes. You could write
 if_come_up_6 <- (lots_of_sim_rolls == 6)
 ```
 
-without the as.numeric, which would generate a list of logical values
+without the `as.numeric`, which would generate a list of logical values
 either True or False. But I know we want to then take an average, where
 the True is set to be 1 and False is 0, so I put those steps together.
 (Think a bit to satisfy that if 3 out of 20 evaluate as True then 3/20
@@ -159,11 +154,12 @@ is the average value.)
 
 Also note that, for complicated historical reasons, we don’t want to use
 just “=” but rather “==”. If you were to write just a single equals
-sign, that would tell it to assign the value of 6 to every component of
-lots_of_sim_rolls. But a double equals sign gives True/False depending
-on whether the equality is true or not. For this case, you could get the
-same result with (lots_of_sim_rolls \> 5) or (lots_of_sim_rolls \>= 6)
-or even !(lots_of_sim_rolls \< 6) because ! signifies logical NOT.
+sign, that would tell it to *assign* the value of 6 to every component
+of `lots_of_sim_rolls`. Which is not what we want. But a double equals
+sign is asking the question so outputs True/False depending on whether
+the equality is true or not. For this case, you could get the same
+result with `'(lots_of_sim_rolls > 5)` or `(lots_of_sim_rolls >= 6)` or
+even `!(lots_of_sim_rolls < 6)` because ! signifies logical NOT.
 
 Note that for this case it doesn’t matter whether I take the average of
 each simulation and then the average of those averages, versus taking
