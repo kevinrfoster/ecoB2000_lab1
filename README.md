@@ -1,12 +1,13 @@
 Lab \#1
 ================
 
-### in class Thursday Sept 5, 2024
+### in class Thursday Sept 4, 2025
 
 ### Econ B2000, MA Econometrics
 
 ### Kevin R Foster, CCNY
-<img src="lab1.jpg" style="width:15.0%" />
+
+<img src="lab1.jpg" style="width:25.0%" />
 
 Overall Goal: you will be assessing the fairness of the dice of the
 people in your group. Each student had a chance to “adjust” the dice, to
@@ -15,7 +16,9 @@ roll some other number than 6 preferentially – some of you have
 different dice. In this I’ll say “6” but you can substitute your own
 chosen number.)* But how would we really know - what is “more often”?
 Obviously some dice will look grossly misshapen but for now we’ll
-concentrate on just the results: did a 6 come up, or not?
+concentrate on just the results: did a 6 come up, or not? Much of the
+problem of statistics is that we’re trying to learn about the shape of
+the dice by just observing what number came up.
 
 Create some Experiment Protocols **before** looking at the data from the
 dice rolls. Plan how to test and state what conclusions would be drawn,
@@ -55,25 +58,24 @@ the average value of the dice when rolled or the distribution of other
 outcomes (what number is on opposite face from 6? Do you suppose that
 number might be disproportionately represented if dice were not fair?).
 
-OK *now you can actually look at the data*, maybe actually roll the
-dice. Only now will you actually perform the experiment. What conclusion
-do you draw from your experiment? How confident are you, in this
-conclusion? How would you revise your protocol if you were to devise
-**EP2**?
+OK *now you can actually look at the data*. Only now will you actually
+perform the experiment. What conclusion do you draw from your
+experiment? How confident are you, in this conclusion? How would you
+revise your protocol if you were to devise **EP2**?
 
 Your group’s short presentation should explain justification for your
 EP1, your experiment results, conclusion and confidence in these
 results, and what modifications you would make for EP2.
 
 For homework, should explain your choices of PP3 and analysis. Then you
-are free to set out run EPn, for higher values of n.
+are free to set out and run EPn, for higher values of n.
 
 ### Some background on simulations with R
 
 You can have the computer roll dice. The command, `sample()`, will do it
 nicely. This command below takes 20 draws from the integers 1 to 6. The
-metaphor is not quite rolling dice, but as if there were 6 balls in a
-jar, labeled with a number, and it picks a ball from the jar 20 times.
+metaphor is now not quite rolling dice, but as if there were 6 balls in
+a jar, labeled with a number, and it picks a ball from the jar 20 times.
 So that is why the `replace=TRUE` command is important, otherwise after
 it takes out a ball it doesn’t put it back so couldn’t run that more
 than 6 times.
@@ -131,14 +133,14 @@ if_come_up_6 <- as.numeric(lots_of_sim_rolls == 6)
 mean(if_come_up_6)
 ```
 
-    ## [1] 0.186
+    ## [1] 0.188
 
 ``` r
 if_come_up_6_vec <- as.numeric(sim_rolls_vec == 6)
 mean(if_come_up_6_vec)
 ```
 
-    ## [1] 0.171
+    ## [1] 0.184
 
 A few notes. You could write
 
